@@ -4,212 +4,214 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anastasia Borisova — Product Leader, AI-first SaaS</title>
-<meta name="description" content="Product leader and two-time founder. 0→1 to scale, growth and monetization, AI-first product development — agents, evals, automation pipelines built hands-on.">
+<meta name="description" content="Product leader and founder across startups & scaleups. 0→1 to scale, growth and monetization, AI-first product development — agents, evals, automation pipelines built hands-on.">
 <meta property="og:title" content="Anastasia Borisova — Product Leader, AI-first SaaS">
 <meta property="og:description" content="0→1 to scale · growth & monetization · AI-first product development. Selected case studies.">
 <meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0d12'/%3E%3Ctext x='32' y='44' font-family='Arial,Helvetica,sans-serif' font-size='34' font-weight='800' fill='%2367e8f9' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#08090d;
-    --bg-2:#0d0f15;
-    --panel:#111420;
-    --panel-2:#151926;
-    --border:#222838;
-    --border-2:#2c3346;
-    --text:#e8edf6;
-    --muted:#97a1b5;
-    --faint:#6b7488;
-    --accent:#6ee7ff;
-    --accent-2:#a78bfa;
-    --good:#4ade80;
-    --warn:#fbbf24;
-    --radius:16px;
+    --bg:#ffffff;
+    --bg-soft:#f5f7fb;
+    --panel:#ffffff;
+    --panel-2:#f4f7fb;
+    --line:#e3e8f0;
+    --line-soft:#edf1f7;
+    --text:#0f1726;
+    --body:#404a5c;
+    --muted:#5d6679;
+    --faint:#8b94a7;
+    --accent:#0891b2;
+    --accent-2:#7c3aed;
+    --good:#16a34a;
+    --radius:20px;
     --maxw:1080px;
+    --measure:70ch;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    background:var(--bg);
-    color:var(--text);
+    background:
+      radial-gradient(1100px 600px at 50% -240px, rgba(8,145,178,.06), transparent 60%),
+      radial-gradient(900px 500px at 85% 120px, rgba(124,58,237,.05), transparent 60%),
+      var(--bg);
+    color:var(--body);
     font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
+    font-size:16px;line-height:1.7;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
     overflow-x:hidden;
   }
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  ::selection{background:rgba(8,145,178,.16);color:#0f1726}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
   .mono{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+  /* custom scrollbar */
+  *::-webkit-scrollbar{width:11px;height:11px}
+  *::-webkit-scrollbar-track{background:var(--bg)}
+  *::-webkit-scrollbar-thumb{background:#cdd5e1;border-radius:8px;border:3px solid var(--bg)}
+  *::-webkit-scrollbar-thumb:hover{background:#b4bece}
+
+  /* scroll progress */
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:100;
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 0 10px rgba(8,145,178,.4)}
 
   /* ---------- NAV ---------- */
-  header.nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(8,9,13,.72);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--border);
-  }
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .brand{font-weight:800;letter-spacing:-.02em;font-size:16px}
-  .brand .dot{color:var(--accent)}
-  .nav-links{display:flex;gap:28px;align-items:center}
-  .nav-links a{font-size:14px;color:var(--muted);transition:color .2s}
-  .nav-links a:hover{color:var(--text)}
-  .nav-cta{
-    font-size:13px;font-weight:600;color:var(--bg)!important;
-    background:var(--accent);padding:8px 16px;border-radius:999px;
-    transition:transform .15s, box-shadow .2s;
-  }
-  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(110,231,255,.25)}
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.8);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{font-weight:800;letter-spacing:-.02em;font-size:16px;display:flex;align-items:center;gap:10px}
+  .brand .mk{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#ffffff;font-weight:900;font-size:14px}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-size:14px;color:var(--muted);transition:color .2s;position:relative;padding:4px 0}
+  .nav-links a:not(.nav-cta).active,.nav-links a:not(.nav-cta):hover{color:var(--text)}
+  .nav-links a:not(.nav-cta).active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+  .nav-cta{font-size:13px;font-weight:700;color:#ffffff!important;background:linear-gradient(135deg,var(--accent),var(--accent-2));padding:10px 30px;min-width:175px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;transition:transform .15s,box-shadow .2s}
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(8,145,178,.28)}
   .burger{display:none;background:none;border:0;color:var(--text);cursor:pointer;font-size:22px}
 
   /* ---------- HERO ---------- */
-  .hero{position:relative;padding:96px 0 64px;overflow:hidden}
-  .hero::before{
-    content:"";position:absolute;top:-200px;left:50%;transform:translateX(-50%);
-    width:900px;height:600px;
-    background:radial-gradient(closest-side, rgba(110,231,255,.16), transparent 70%),
-               radial-gradient(closest-side, rgba(167,139,250,.14), transparent 70%);
-    background-position:30% 30%, 70% 40%;
-    background-repeat:no-repeat;filter:blur(10px);pointer-events:none;
-  }
-  .eyebrow{
-    font-size:12.5px;letter-spacing:.04em;color:var(--accent);
-    border:1px solid var(--border-2);background:var(--panel);
-    display:inline-block;padding:6px 14px;border-radius:999px;margin-bottom:24px;
-  }
-  h1.hero-title{
-    font-size:clamp(34px,5.6vw,60px);line-height:1.05;font-weight:900;
-    letter-spacing:-.03em;max-width:18ch;margin-bottom:22px;
-  }
-  h1.hero-title .grad{
-    background:linear-gradient(100deg,var(--accent),var(--accent-2));
-    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  }
-  .hero-sub{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:62ch;margin-bottom:32px}
-  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
-  .btn{
-    font-size:14.5px;font-weight:600;padding:12px 22px;border-radius:999px;
-    transition:transform .15s,box-shadow .2s,border-color .2s,background .2s;cursor:pointer;display:inline-flex;align-items:center;gap:8px;
-  }
-  .btn-primary{background:var(--accent);color:var(--bg)}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(110,231,255,.28)}
-  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border-2)}
+  .hero{position:relative;padding:108px 0 76px}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;color:var(--accent);border:1px solid var(--line);background:rgba(8,145,178,.06);display:inline-block;padding:7px 15px;border-radius:999px;margin-bottom:28px}
+  h1.hero-title{font-size:clamp(38px,6vw,66px);line-height:1.04;font-weight:900;letter-spacing:-.035em;max-width:16ch;margin-bottom:24px;color:var(--text)}
+  h1.hero-title .grad{background:linear-gradient(100deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{font-size:clamp(17px,2vw,20px);line-height:1.65;color:var(--muted);max-width:60ch;margin-bottom:36px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:60px}
+  .btn{font-size:14.5px;font-weight:600;padding:13px 24px;border-radius:999px;transition:transform .15s,box-shadow .2s,border-color .2s,background .2s,color .2s;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+  .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#ffffff}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(8,145,178,.28)}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
 
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;border-top:1px solid var(--border);padding-top:32px}
-  .stat .num{font-size:clamp(22px,3vw,30px);font-weight:800;letter-spacing:-.02em;color:var(--text)}
-  .stat .num span{color:var(--accent)}
-  .stat .lbl{font-size:12.5px;color:var(--faint);margin-top:2px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .stat{background:var(--bg-soft);padding:22px 20px}
+  .stat .num{font-size:clamp(22px,3vw,30px);font-weight:800;letter-spacing:-.02em;color:var(--text);line-height:1.1}
+  .stat .num span{background:linear-gradient(100deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .stat .lbl{font-size:12.5px;color:var(--faint);margin-top:6px;line-height:1.4}
 
-  /* ---------- SECTION ---------- */
-  section{padding:64px 0;border-top:1px solid var(--border)}
-  .sec-label{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-  .sec-title{font-size:clamp(24px,3.4vw,34px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
-  .sec-intro{color:var(--muted);max-width:64ch;margin-bottom:36px;font-size:15.5px}
+  /* ---------- SECTIONS ---------- */
+  section{padding:84px 0;position:relative}
+  section + section::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(100%,var(--maxw));height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+  .sec-head{margin-bottom:44px}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .sec-label::before{content:"";width:28px;height:1px;background:var(--accent);opacity:.6}
+  .sec-title{font-size:clamp(26px,3.6vw,38px);font-weight:800;letter-spacing:-.025em;color:var(--text);margin-bottom:12px}
+  .sec-intro{color:var(--muted);max-width:62ch;font-size:16px}
+
+  /* ---------- LOGO STRIP ---------- */
+  #experience{padding:60px 0}
+  .logo-cap{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);text-align:center;margin-bottom:30px}
+  .logo-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:42px}
+  .logo-row.small{gap:48px}
+  .logo{height:30px;max-width:140px;object-fit:contain;filter:grayscale(1);opacity:.58;transition:filter .25s,opacity .25s}
+  .logo-row.small .logo{height:26px;max-width:120px}
+  .logo:hover{filter:grayscale(0);opacity:1}
+  .wm{font-weight:800;font-size:17px;letter-spacing:.01em;color:var(--muted);opacity:.85;transition:color .2s,opacity .2s}
+  .wm:hover{color:var(--text);opacity:1}
+  .logo-row + .logo-cap{margin-top:46px}
 
   /* ---------- CASE CARD ---------- */
-  .case{
-    background:linear-gradient(180deg,var(--panel),var(--bg-2));
-    border:1px solid var(--border);border-radius:var(--radius);
-    padding:32px;margin-bottom:24px;transition:border-color .25s,transform .25s,box-shadow .25s;
-  }
-  .case:hover{border-color:var(--border-2);transform:translateY(-3px);box-shadow:0 18px 50px rgba(0,0,0,.35)}
-  .case.flagship{border-color:rgba(110,231,255,.35);box-shadow:0 0 0 1px rgba(110,231,255,.08),0 20px 60px rgba(0,0,0,.35)}
-  .case-tag{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin-bottom:12px}
-  .case h3{font-size:clamp(20px,2.6vw,26px);font-weight:800;letter-spacing:-.02em;line-height:1.2;margin-bottom:6px}
-  .case .tagline{color:var(--muted);font-size:15px;margin-bottom:18px}
-  .meta{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13px;color:var(--faint);margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--border)}
-  .meta b{color:var(--muted);font-weight:600}
-  .block{margin-bottom:18px}
-  .block .h{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
-  .block p{font-size:15px;color:#cdd5e3}
-  .block ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-  .block li{position:relative;padding-left:20px;font-size:15px;color:#cdd5e3}
-  .block li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:2px;background:var(--accent);opacity:.8}
-  .block li b, .block p b{color:#fff;font-weight:700}
-  .em{color:var(--accent);font-weight:700}
+  .case{position:relative;background:linear-gradient(180deg,#ffffff,#f8fafc);border:1px solid var(--line);border-radius:var(--radius);padding:40px;margin-bottom:26px;transition:border-color .25s,transform .25s,box-shadow .25s;box-shadow:0 1px 2px rgba(16,23,38,.04),0 18px 40px -28px rgba(16,23,38,.16)}
+  .case:hover{border-color:#cfd7e3;transform:translateY(-3px);box-shadow:0 2px 4px rgba(16,23,38,.05),0 26px 50px -30px rgba(16,23,38,.22)}
+  .case.flagship{border-color:rgba(8,145,178,.4);box-shadow:0 0 0 1px rgba(8,145,178,.12),0 26px 60px -34px rgba(16,23,38,.18)}
+  .case .idx{position:absolute;top:30px;right:36px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--faint);letter-spacing:.05em}
+  .case-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2);margin-bottom:14px}
+  .case h3{font-size:clamp(21px,2.7vw,27px);font-weight:800;letter-spacing:-.02em;line-height:1.22;color:var(--text);margin-bottom:8px;max-width:30ch}
+  .case .tagline{color:var(--muted);font-size:15.5px;margin-bottom:22px;max-width:var(--measure)}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 10px;margin-bottom:26px;padding-bottom:26px;border-bottom:1px solid var(--line-soft)}
+  .meta span{font-size:12.5px;color:var(--muted);background:var(--bg-soft);border:1px solid var(--line-soft);padding:6px 12px;border-radius:8px}
+  .meta b{color:var(--faint);font-weight:600}
+  .block{margin-bottom:24px;max-width:var(--measure)}
+  .block:last-of-type{margin-bottom:0}
+  .block .h{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:12px;display:flex;align-items:center;gap:9px}
+  .block .h::before{content:"";width:14px;height:2px;border-radius:2px;background:var(--accent);opacity:.7}
+  .block p{font-size:15.5px;color:var(--body);line-height:1.72}
+  .block ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .block li{position:relative;padding-left:24px;font-size:15.5px;color:var(--body);line-height:1.65}
+  .block li::before{content:"";position:absolute;left:2px;top:10px;width:7px;height:7px;border-radius:2px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+  .block li b,.block p b{color:var(--text);font-weight:700}
+  .em{color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums}
 
-  .subcase{background:var(--panel-2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-top:14px}
-  .subcase .st{font-weight:700;font-size:15px;margin-bottom:8px;color:#fff}
-  .subcase .st span{color:var(--accent-2);font-family:'JetBrains Mono',monospace;font-size:12px;margin-right:8px}
-  .subcase p{font-size:14px;color:#c2cad8;margin-bottom:8px}
-  .subcase ul{list-style:none;display:flex;flex-direction:column;gap:7px;margin:10px 0}
-  .subcase li{position:relative;padding-left:18px;font-size:13.5px;color:#c2cad8}
-  .subcase li::before{content:"›";position:absolute;left:0;color:var(--accent);font-weight:700}
+  .subcase{background:var(--panel-2);border:1px solid var(--line-soft);border-radius:14px;padding:24px;margin-top:16px}
+  .subcase .st{font-weight:700;font-size:15.5px;margin-bottom:12px;color:var(--text);display:flex;align-items:center;gap:11px}
+  .subcase .st span{display:inline-grid;place-items:center;min-width:30px;height:24px;padding:0 8px;border-radius:7px;background:rgba(167,139,250,.14);color:var(--accent-2);font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700}
+  .subcase p{font-size:14.5px;color:var(--body);margin-bottom:10px;line-height:1.66}
+  .subcase p:last-child{margin-bottom:0}
 
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-  .chip{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);background:var(--bg-2);border:1px solid var(--border-2);padding:5px 11px;border-radius:7px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+  .chip{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);background:var(--bg-soft);border:1px solid var(--line);padding:6px 12px;border-radius:8px;transition:border-color .2s,color .2s}
+  .case:hover .chip{border-color:#cbd3df}
 
-  /* ---------- COMPACT / ADVISORY GRID ---------- */
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-  .earlier{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
-  .mini{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:22px;transition:border-color .2s,transform .2s}
-  .mini:hover{border-color:var(--border-2);transform:translateY(-2px)}
-  .mini h4{font-size:16px;font-weight:700;margin-bottom:4px}
-  .mini .role{font-size:12.5px;color:var(--accent);font-family:'JetBrains Mono',monospace;margin-bottom:10px}
-  .mini p{font-size:13.5px;color:#bcc4d2}
+  /* ---------- ADVISORY GRID / EARLIER ---------- */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .grid2 .case{margin-bottom:0}
+  .earlier{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+  .mini{background:linear-gradient(180deg,var(--panel),#f8fafc);border:1px solid var(--line);border-radius:14px;padding:24px;transition:border-color .2s,transform .2s}
+  .mini:hover{border-color:#cfd7e3;transform:translateY(-2px)}
+  .mini h4{font-size:16.5px;font-weight:700;color:var(--text);margin-bottom:5px}
+  .mini .role{font-size:12px;color:var(--accent);font-family:'JetBrains Mono',monospace;margin-bottom:12px}
+  .mini p{font-size:14px;color:var(--body);line-height:1.6}
 
   /* ---------- ABOUT ---------- */
-  .about p{font-size:16px;color:#cdd5e3;max-width:70ch;margin-bottom:16px}
+  .about p{font-size:17px;color:var(--body);max-width:68ch;margin-bottom:18px;line-height:1.75}
   .about p:last-child{margin-bottom:0}
   .about .em{color:var(--accent)}
 
   /* ---------- SKILLS ---------- */
-  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  .skillcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:22px}
-  .skillcard h4{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-  .skillcard .chips .chip{font-size:11px}
+  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .skillcard{background:linear-gradient(180deg,var(--panel),#f8fafc);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .skillcard h4{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+  .skillcard .chip{font-size:11.5px}
 
   /* ---------- EDUCATION ---------- */
-  .edu{display:flex;flex-direction:column;gap:14px}
-  .edu .row{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap;font-size:14.5px;color:#cdd5e3;border-bottom:1px solid var(--border);padding-bottom:14px}
-  .edu .row b{color:#fff}
+  .edu{display:flex;flex-direction:column;gap:0}
+  .edu .row{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap;font-size:15px;color:var(--body);border-bottom:1px solid var(--line-soft);padding:16px 0}
+  .edu .row:last-child{border-bottom:0}
+  .edu .row b{color:var(--text)}
   .edu .row .yr{color:var(--faint);font-family:'JetBrains Mono',monospace;font-size:12.5px;margin-left:auto}
-  .langs{margin-top:18px;font-size:14px;color:var(--muted)}
+  .langs{margin-top:22px;font-size:15px;color:var(--muted)}
   .langs b{color:var(--text)}
 
   /* ---------- CONTACT ---------- */
-  .contact{text-align:center;padding:90px 0}
-  .contact h2{font-size:clamp(26px,4vw,40px);font-weight:900;letter-spacing:-.02em;margin-bottom:14px}
+  .contact{text-align:center;padding:104px 0}
+  .contact h2{font-size:clamp(28px,4.4vw,46px);font-weight:900;letter-spacing:-.03em;color:var(--text);margin-bottom:16px;line-height:1.1}
   .contact h2 .grad{background:linear-gradient(100deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-  .contact p{color:var(--muted);max-width:48ch;margin:0 auto 30px;font-size:16px}
-  .contact .hero-actions{justify-content:center}
-  footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;color:var(--faint);font-size:13px}
+  .contact p{color:var(--muted);max-width:50ch;margin:0 auto 32px;font-size:17px}
+  .contact .hero-actions{justify-content:center;margin-bottom:0}
+  footer{border-top:1px solid var(--line-soft);padding:30px 0;text-align:center;color:var(--faint);font-size:13px}
 
   /* ---------- REVEAL ---------- */
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
   .reveal.visible{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
   /* ---------- RESPONSIVE ---------- */
-  @media (max-width:860px){
-    .stats{grid-template-columns:repeat(2,1fr);gap:22px 16px}
+  @media (max-width:880px){
     .grid2{grid-template-columns:1fr}
     .earlier{grid-template-columns:1fr}
     .skills-grid{grid-template-columns:1fr}
-    .nav-links{
-      display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;
-      background:var(--bg-2);border-bottom:1px solid var(--border);padding:8px 0;
-    }
+    .stats{grid-template-columns:1fr 1fr}
+    .case{padding:28px}
+    .case .idx{top:22px;right:24px}
+    .nav-links{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg-soft);border-bottom:1px solid var(--line);padding:8px 0}
     .nav-links.open{display:flex}
-    .nav-links a{padding:14px 24px;width:100%}
-    .nav-links .nav-cta{margin:10px 24px;text-align:center}
+    .nav-links a{padding:14px 28px;width:100%}
+    .nav-links .nav-cta{margin:10px 28px;text-align:center;justify-content:center}
     .burger{display:block}
-    .case{padding:24px}
   }
 </style>
 </head>
 <body>
+<div id="progress"></div>
 
 <header class="nav">
   <div class="wrap nav-in">
-    <a href="#top" class="brand">Anastasia Borisova<span class="dot">.</span></a>
+    <a href="#top" class="brand"><span class="mk">A</span>Anastasia Borisova</a>
     <nav class="nav-links" id="navLinks">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
+      <a href="#work" data-spy="work">Work</a>
+      <a href="#about" data-spy="about">About</a>
+      <a href="#skills" data-spy="skills">Skills</a>
       <a href="#contact" class="nav-cta">Get in touch</a>
     </nav>
     <button class="burger" id="burger" aria-label="Menu">☰</button>
@@ -217,11 +219,11 @@
 </header>
 
 <a id="top"></a>
-<section class="hero" style="border-top:0">
+<section class="hero">
   <div class="wrap">
-    <span class="eyebrow mono">Product Leader · AI-first SaaS · 0→1 to scale</span>
+    <span class="eyebrow">Product Leader · AI-first SaaS · 0→1 to scale</span>
     <h1 class="hero-title">Strategy that shows up in <span class="grad">revenue.</span></h1>
-    <p class="hero-sub">Product leader and founder — startups &amp; scaleups. I turn early ideas into products that grow: I find the market, validate the problem, and build the product operating model. I create the product strategy for scaling products and push disrupting growth initiatives to execute the business strategy.</p>
+    <p class="hero-sub">Product leader and founder across startups &amp; scaleups. I turn early ideas into products that grow: I find the market, validate the problem, and build the product operating model — then push the growth initiatives that execute the business strategy.</p>
     <div class="hero-actions">
       <a href="#work" class="btn btn-primary">See selected work →</a>
       <a href="mailto:anastasia.batareykina@gmail.com" class="btn btn-ghost">Email me</a>
@@ -236,24 +238,49 @@
   </div>
 </section>
 
+<!-- ===================== EXPERIENCE / LOGOS ===================== -->
+<section id="experience">
+  <div class="wrap reveal">
+    <div class="logo-cap">Built &amp; scaled at</div>
+    <div class="logo-row">
+      <img class="logo" data-name="Neirochat" src="https://logo.clearbit.com/neirochat.io" alt="Neirochat logo">
+      <img class="logo" data-name="SplitMetrics" src="https://logo.clearbit.com/splitmetrics.com" alt="SplitMetrics logo">
+      <img class="logo" data-name="eLama" src="https://logo.clearbit.com/elama.global" alt="eLama logo">
+      <img class="logo" data-name="Apple Search Ads" src="https://logo.clearbit.com/apple.com" alt="Apple logo">
+      <img class="logo" data-name="Yandex" src="https://logo.clearbit.com/yandex.com" alt="Yandex logo">
+      <span class="wm">App4Brand</span>
+      <span class="wm">Legalight</span>
+      <span class="wm">Interactive Lab</span>
+      <span class="wm">Russ Outdoor</span>
+    </div>
+    <div class="logo-cap">Brands delivered for</div>
+    <div class="logo-row small">
+      <img class="logo" data-name="Audi" src="https://logo.clearbit.com/audi.com" alt="Audi logo">
+      <img class="logo" data-name="BMW" src="https://logo.clearbit.com/bmw.com" alt="BMW logo">
+      <img class="logo" data-name="Samsung" src="https://logo.clearbit.com/samsung.com" alt="Samsung logo">
+    </div>
+  </div>
+</section>
+
 <!-- ===================== WORK ===================== -->
 <section id="work">
   <div class="wrap">
-    <div class="reveal">
-      <div class="sec-label mono">Selected work</div>
+    <div class="sec-head reveal">
+      <div class="sec-label">Selected work</div>
       <h2 class="sec-title">Case studies</h2>
       <p class="sec-intro">Eight projects across AI SaaS, AdTech/MarTech, mobile and advisory — every number is real. Ordered by relevance to AI and senior product roles.</p>
     </div>
 
     <!-- NEIROCHAT -->
     <article class="case flagship reveal">
-      <div class="case-tag mono">Flagship · Founder & CPO</div>
+      <span class="idx mono">01</span>
+      <div class="case-tag">Flagship · Founder &amp; CPO</div>
       <h3>Neirochat — an AI platform I built 0→1, and the agents that now run it</h3>
-      <p class="tagline">A B2C AI SaaS — LLM router + creative-AI platform for Russian-speaking SME owners.</p>
+      <p class="tagline">A B2C AI SaaS — LLM router + creative-AI platform for Russian-speaking users and SME owners.</p>
       <div class="meta">
-        <span><b>Role:</b> Co-Founder &amp; Chief Product Officer</span>
-        <span><b>When:</b> 2026 – present</span>
-        <span><b>Stack:</b> Claude Code, Python, Yandex Direct/Metrica, Replicate, OpenRouter, SQL</span>
+        <span><b>Role</b> &nbsp;Co-Founder &amp; Chief Product Officer</span>
+        <span><b>When</b> &nbsp;2026 – present</span>
+        <span><b>Stack</b> &nbsp;Claude Code · Python · Yandex Direct/Metrica · Replicate · OpenRouter · SQL</span>
       </div>
       <div class="block">
         <div class="h">The problem</div>
@@ -269,7 +296,7 @@
         </ul>
       </div>
       <div class="block">
-        <div class="h">Results (early-stage, real numbers)</div>
+        <div class="h">Results — early-stage, real numbers</div>
         <ul>
           <li>Registration conversion <span class="em">+15%</span> (15.1% → 17.4%) from a single H1/landing change — now reaching <span class="em">30%</span>.</li>
           <li>Paywall-reach conversion lifted from <span class="em">22% → 85%</span> after redesigning paywall timing; a record <span class="em">18.9%</span> purchase-per-registration week followed.</li>
@@ -287,8 +314,8 @@
 
       <div class="subcase">
         <div class="st"><span class="mono">1b</span>SEO content pipeline — 10-phase publishing agent</div>
-        <p>An end-to-end agent that turns a topic + competitor URLs into a live, SEO + GEO/AEO-optimized article: competitor analysis → SEO query research → content brief → branded HTML with Article + FAQPage schema → an "answer-first" block engineered for LLM citation (ChatGPT, Alice, Perplexity) → 3 on-brand images via Replicate → re-hosted on Yandex storage → HTML patched → published via the admin API.</p>
-        <p>One person publishes SEO- and LLM-optimized articles in ~10 minutes instead of the 6–7 hours of content-creator work. It's human-in-the-loop by design — nothing goes live without my sign-off.</p>
+        <p><b>What it does:</b> an end-to-end agent that turns a topic + competitor URLs into a live, SEO + GEO/AEO-optimized article: competitor analysis → SEO query research → content brief → branded HTML with Article + FAQPage schema → an "answer-first" block engineered for LLM citation (ChatGPT, Alice, Perplexity) → 3 on-brand images via Replicate → re-hosted on Yandex storage → HTML patched → published via the admin API.</p>
+        <p><b>Why it matters:</b> one person publishes SEO- and LLM-optimized articles in ~10 minutes instead of the 6–7 hours of content-creator work. It's human-in-the-loop by design — nothing goes live without my sign-off.</p>
       </div>
 
       <div class="chips">
@@ -298,13 +325,14 @@
 
     <!-- SPLITMETRICS -->
     <article class="case reveal">
-      <div class="case-tag mono">B2B SaaS · Apple Search Ads</div>
+      <span class="idx mono">02</span>
+      <div class="case-tag">B2B SaaS · Apple Search Ads</div>
       <h3>SplitMetrics — freemium 0→1 to 8-figure revenue, plus an AI engine clients trust with real budgets</h3>
       <p class="tagline">Official Apple Search Ads platform for mobile growth.</p>
       <div class="meta">
-        <span><b>Role:</b> Product Manager → Lead PM</span>
-        <span><b>When:</b> 2022 – 2024</span>
-        <span><b>Scale:</b> 3 product teams, 20 people</span>
+        <span><b>Role</b> &nbsp;Product Manager → Lead PM</span>
+        <span><b>When</b> &nbsp;2022 – 2024</span>
+        <span><b>Scale</b> &nbsp;3 product teams · 20 people</span>
       </div>
       <div class="block">
         <div class="h">The problem</div>
@@ -332,13 +360,14 @@
 
     <!-- ELAMA -->
     <article class="case reveal">
-      <div class="case-tag mono">AdTech · acquired by Yandex</div>
+      <span class="idx mono">03</span>
+      <div class="case-tag">AdTech · acquired by Yandex</div>
       <h3>eLama — portfolio strategy that became an acquisition asset</h3>
       <p class="tagline">Self-serve AdTech platform, 50k+ B2C/SME users.</p>
       <div class="meta">
-        <span><b>Role:</b> Principal Product Manager</span>
-        <span><b>When:</b> 2020 – 2022</span>
-        <span><b>Domain:</b> AdTech, self-serve</span>
+        <span><b>Role</b> &nbsp;Principal Product Manager</span>
+        <span><b>When</b> &nbsp;2020 – 2022</span>
+        <span><b>Domain</b> &nbsp;AdTech, self-serve</span>
       </div>
       <div class="block">
         <div class="h">The problem</div>
@@ -366,13 +395,14 @@
 
     <!-- APP4BRAND -->
     <article class="case reveal">
-      <div class="case-tag mono">Mobile SaaS · iOS &amp; Android</div>
+      <span class="idx mono">04</span>
+      <div class="case-tag">Mobile SaaS · iOS &amp; Android</div>
       <h3>App4Brand — mobile SaaS 0→1, five iOS &amp; Android apps shipped end to end</h3>
       <p class="tagline">Brand–audience communication platform.</p>
       <div class="meta">
-        <span><b>Role:</b> Head of Product</span>
-        <span><b>When:</b> 2014 – 2016</span>
-        <span><b>Team:</b> 12, full-stack</span>
+        <span><b>Role</b> &nbsp;Head of Product</span>
+        <span><b>When</b> &nbsp;2014 – 2016</span>
+        <span><b>Team</b> &nbsp;12, full-stack</span>
       </div>
       <div class="block">
         <div class="h">What I did</div>
@@ -394,8 +424,9 @@
 
     <!-- ADVISORY GRID -->
     <div class="grid2">
-      <article class="case reveal" style="margin-bottom:0">
-        <div class="case-tag mono">Advisory</div>
+      <article class="case reveal">
+        <span class="idx mono">05</span>
+        <div class="case-tag">Advisory</div>
         <h3 style="font-size:21px">Product operating model + churn diagnostics</h3>
         <p class="tagline">A US-market FinTech SaaS · 2025</p>
         <div class="block">
@@ -411,8 +442,9 @@
         </div>
       </article>
 
-      <article class="case reveal" style="margin-bottom:0">
-        <div class="case-tag mono">Advisory · GTM</div>
+      <article class="case reveal">
+        <span class="idx mono">06</span>
+        <div class="case-tag">Advisory · GTM</div>
         <h3 style="font-size:21px">Discovery + market-entry strategy for an EdTech expansion</h3>
         <p class="tagline">An established online English school entering Spain · 2025–2026</p>
         <div class="block">
@@ -434,8 +466,9 @@
     </div>
 
     <!-- KITTY BREAK -->
-    <article class="case reveal" style="margin-top:24px">
-      <div class="case-tag mono">AI PM capstone</div>
+    <article class="case reveal" style="margin-top:26px">
+      <span class="idx mono">07</span>
+      <div class="case-tag">AI PM capstone</div>
       <h3>Kitty Break — an end-to-end AI PRD with an eval-tested GPT-4 Vision pipeline</h3>
       <p class="tagline">AI Product Management certification (Product Faculty) — concept + working pipeline, not a shipped app.</p>
       <div class="block">
@@ -450,14 +483,18 @@
           <li><b>Built a working pipeline</b> — an n8n + GPT-4 Vision flow that ingests video, samples frames, classifies emotional content, and returns schema-valid JSON (<span class="em">100%</span> schema-pass via a Python grader; documented the ~60% content-accuracy gap honestly with a remediation plan).</li>
         </ul>
       </div>
+      <div class="block">
+        <div class="h">Why it's on the site</div>
+        <p>It shows how I work on AI products end to end: discovery, evals, human-in-the-loop design, and honest measurement of what's actually working. And it isn't tied to any employer's product.</p>
+      </div>
       <div class="chips">
         <span class="chip">AI PRD</span><span class="chip">eval-driven development</span><span class="chip">GPT-4 Vision</span><span class="chip">prompt engineering</span><span class="chip">4D method</span>
       </div>
     </article>
 
     <!-- EARLIER -->
-    <div class="reveal" style="margin-top:8px">
-      <div class="sec-label mono" style="margin-top:24px">Earlier track record</div>
+    <div class="sec-head reveal" style="margin-top:64px;margin-bottom:24px">
+      <div class="sec-label">Earlier track record</div>
     </div>
     <div class="earlier reveal">
       <div class="mini">
@@ -481,19 +518,23 @@
 
 <!-- ===================== ABOUT ===================== -->
 <section id="about">
-  <div class="wrap about reveal">
-    <div class="sec-label mono">About</div>
-    <h2 class="sec-title">How I work</h2>
-    <p style="margin-top:18px">I'm a product leader with 14+ years scaling SaaS — integrating AI to execute the business strategy, 0→1 product development, revenue growth and global go-to-market for B2C/B2B, with a proven record in AdTech, MarTech and social. At SplitMetrics I launched the Apple Search Ads freemium tier that acquired 1,500+ clients and 8-figure revenue in nine months, securing market leadership. At eLama I led the AdTech portfolio strategy into the Yandex acquisition, where the products became valuation assets. I built Interactive Lab from zero to $2M+ revenue with full P&amp;L ownership, and I co-founded Neirochat 0→1 — an LLM router closing the AI-access gap for emerging markets — owning the full stack from discovery to build to GTM.</p>
-    <p>I define product vision, 4D PRDs &amp; product roadmaps and scalable operating models, and I'm hands-on in AI — building agents, evals and automation pipelines daily — coaching product teams to think in outcomes, not output. I started in M&amp;A and due diligence, which taught me to <span class="em">read a product's real contribution to P&amp;L.</span> I'm a practicing product advisor and accelerator mentor, and an active voice in the international product management community.</p>
+  <div class="wrap about">
+    <div class="sec-head reveal">
+      <div class="sec-label">About</div>
+      <h2 class="sec-title">How I work</h2>
+    </div>
+    <div class="reveal">
+      <p>I'm a product leader with 14+ years scaling SaaS — integrating AI to execute the business strategy, 0→1 product development, revenue growth and global go-to-market for B2C/B2B, with a proven record in AdTech, MarTech and social. At SplitMetrics I launched the Apple Search Ads freemium tier that acquired 1,500+ clients and 8-figure revenue in nine months, securing market leadership. At eLama I led the AdTech portfolio strategy into the Yandex acquisition, where the products became valuation assets. I built Interactive Lab from zero to $2M+ revenue with full P&amp;L ownership, and I co-founded Neirochat 0→1 — an LLM router closing the AI-access gap for emerging markets — owning the full stack from discovery to build to GTM.</p>
+      <p>I define product vision, 4D PRDs &amp; product roadmaps and scalable operating models, and I'm hands-on in AI — building agents, evals and automation pipelines daily — coaching product teams to think in outcomes, not output. I started in M&amp;A and due diligence, which taught me to <span class="em">read a product's real contribution to P&amp;L.</span> I'm a practicing product advisor and accelerator mentor, and an active voice in the international product management community.</p>
+    </div>
   </div>
 </section>
 
 <!-- ===================== SKILLS ===================== -->
 <section id="skills">
   <div class="wrap">
-    <div class="reveal">
-      <div class="sec-label mono">Capabilities</div>
+    <div class="sec-head reveal">
+      <div class="sec-label">Capabilities</div>
       <h2 class="sec-title">Skills</h2>
     </div>
     <div class="skills-grid reveal">
@@ -523,9 +564,11 @@
       </div>
     </div>
 
-    <div class="reveal" style="margin-top:36px">
-      <div class="sec-label mono">Education &amp; certifications</div>
-      <div class="edu" style="margin-top:18px">
+    <div class="sec-head reveal" style="margin-top:56px;margin-bottom:8px">
+      <div class="sec-label">Education &amp; certifications</div>
+    </div>
+    <div class="reveal">
+      <div class="edu">
         <div class="row"><b>Higher School of Economics, Moscow</b> — Master's, Civil Arbitration / Law <span class="yr">2006</span></div>
         <div class="row"><b>Université PSL, Paris</b> — graduate diploma, French advocacy</div>
         <div class="row"><b>Université de Tours</b> — French language summer school</div>
@@ -537,7 +580,7 @@
 </section>
 
 <!-- ===================== CONTACT ===================== -->
-<section id="contact" style="border-top:1px solid var(--border)">
+<section id="contact">
   <div class="wrap contact reveal">
     <h2>Let's build something that <span class="grad">shows up in revenue.</span></h2>
     <p>Open to Head of Product / Lead PM roles in scale-up and growth-stage companies, and selective product advisory.</p>
@@ -554,16 +597,48 @@
 </footer>
 
 <script>
+  // Scroll progress bar
+  var prog=document.getElementById('progress');
+  function onScroll(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    prog.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  }
+  document.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
   // Mobile nav
   var burger=document.getElementById('burger'), links=document.getElementById('navLinks');
   burger.addEventListener('click',function(){links.classList.toggle('open')});
   links.addEventListener('click',function(e){if(e.target.tagName==='A')links.classList.remove('open')});
 
   // Reveal on scroll
-  var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target);}});
+  var rObs=new IntersectionObserver(function(es){
+    es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');rObs.unobserve(en.target);}});
   },{threshold:0.12});
-  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+  document.querySelectorAll('.reveal').forEach(function(el){rObs.observe(el)});
+
+  // Active nav (scrollspy)
+  var spyMap={};
+  document.querySelectorAll('.nav-links a[data-spy]').forEach(function(a){spyMap[a.getAttribute('data-spy')]=a;});
+  var sObs=new IntersectionObserver(function(es){
+    es.forEach(function(en){
+      if(en.isIntersecting){
+        Object.values(spyMap).forEach(function(a){a.classList.remove('active')});
+        var a=spyMap[en.target.id]; if(a)a.classList.add('active');
+      }
+    });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  ['work','about','skills'].forEach(function(id){var el=document.getElementById(id); if(el)sObs.observe(el);});
+
+  // Logo fallback → clean wordmark if a logo image can't load
+  document.querySelectorAll('img.logo').forEach(function(im){
+    im.addEventListener('error',function(){
+      var s=document.createElement('span');
+      s.className='wm';
+      s.textContent=im.getAttribute('data-name');
+      im.replaceWith(s);
+    });
+  });
 </script>
 </body>
 </html>
