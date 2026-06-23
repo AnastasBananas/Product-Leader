@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anastasia Borisova — Product Leader, AI-first SaaS</title>
+<meta name="description" content="Product leader and two-time founder. 0→1 to scale, growth and monetization, AI-first product development — agents, evals, automation pipelines built hands-on.">
+<meta property="og:title" content="Anastasia Borisova — Product Leader, AI-first SaaS">
+<meta property="og:description" content="0→1 to scale · growth & monetization · AI-first product development. Selected case studies.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08090d;
+    --bg-2:#0d0f15;
+    --panel:#111420;
+    --panel-2:#151926;
+    --border:#222838;
+    --border-2:#2c3346;
+    --text:#e8edf6;
+    --muted:#97a1b5;
+    --faint:#6b7488;
+    --accent:#6ee7ff;
+    --accent-2:#a78bfa;
+    --good:#4ade80;
+    --warn:#fbbf24;
+    --radius:16px;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .mono{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,9,13,.72);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-weight:800;letter-spacing:-.02em;font-size:16px}
+  .brand .dot{color:var(--accent)}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-size:14px;color:var(--muted);transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-cta{
+    font-size:13px;font-weight:600;color:var(--bg)!important;
+    background:var(--accent);padding:8px 16px;border-radius:999px;
+    transition:transform .15s, box-shadow .2s;
+  }
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(110,231,255,.25)}
+  .burger{display:none;background:none;border:0;color:var(--text);cursor:pointer;font-size:22px}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;padding:96px 0 64px;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;top:-200px;left:50%;transform:translateX(-50%);
+    width:900px;height:600px;
+    background:radial-gradient(closest-side, rgba(110,231,255,.16), transparent 70%),
+               radial-gradient(closest-side, rgba(167,139,250,.14), transparent 70%);
+    background-position:30% 30%, 70% 40%;
+    background-repeat:no-repeat;filter:blur(10px);pointer-events:none;
+  }
+  .eyebrow{
+    font-size:12.5px;letter-spacing:.04em;color:var(--accent);
+    border:1px solid var(--border-2);background:var(--panel);
+    display:inline-block;padding:6px 14px;border-radius:999px;margin-bottom:24px;
+  }
+  h1.hero-title{
+    font-size:clamp(34px,5.6vw,60px);line-height:1.05;font-weight:900;
+    letter-spacing:-.03em;max-width:18ch;margin-bottom:22px;
+  }
+  h1.hero-title .grad{
+    background:linear-gradient(100deg,var(--accent),var(--accent-2));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-sub{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:62ch;margin-bottom:32px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+  .btn{
+    font-size:14.5px;font-weight:600;padding:12px 22px;border-radius:999px;
+    transition:transform .15s,box-shadow .2s,border-color .2s,background .2s;cursor:pointer;display:inline-flex;align-items:center;gap:8px;
+  }
+  .btn-primary{background:var(--accent);color:var(--bg)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(110,231,255,.28)}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border-2)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;border-top:1px solid var(--border);padding-top:32px}
+  .stat .num{font-size:clamp(22px,3vw,30px);font-weight:800;letter-spacing:-.02em;color:var(--text)}
+  .stat .num span{color:var(--accent)}
+  .stat .lbl{font-size:12.5px;color:var(--faint);margin-top:2px}
+
+  /* ---------- SECTION ---------- */
+  section{padding:64px 0;border-top:1px solid var(--border)}
+  .sec-label{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .sec-title{font-size:clamp(24px,3.4vw,34px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+  .sec-intro{color:var(--muted);max-width:64ch;margin-bottom:36px;font-size:15.5px}
+
+  /* ---------- CASE CARD ---------- */
+  .case{
+    background:linear-gradient(180deg,var(--panel),var(--bg-2));
+    border:1px solid var(--border);border-radius:var(--radius);
+    padding:32px;margin-bottom:24px;transition:border-color .25s,transform .25s,box-shadow .25s;
+  }
+  .case:hover{border-color:var(--border-2);transform:translateY(-3px);box-shadow:0 18px 50px rgba(0,0,0,.35)}
+  .case.flagship{border-color:rgba(110,231,255,.35);box-shadow:0 0 0 1px rgba(110,231,255,.08),0 20px 60px rgba(0,0,0,.35)}
+  .case-tag{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin-bottom:12px}
+  .case h3{font-size:clamp(20px,2.6vw,26px);font-weight:800;letter-spacing:-.02em;line-height:1.2;margin-bottom:6px}
+  .case .tagline{color:var(--muted);font-size:15px;margin-bottom:18px}
+  .meta{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13px;color:var(--faint);margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+  .meta b{color:var(--muted);font-weight:600}
+  .block{margin-bottom:18px}
+  .block .h{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+  .block p{font-size:15px;color:#cdd5e3}
+  .block ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .block li{position:relative;padding-left:20px;font-size:15px;color:#cdd5e3}
+  .block li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:2px;background:var(--accent);opacity:.8}
+  .block li b, .block p b{color:#fff;font-weight:700}
+  .em{color:var(--accent);font-weight:700}
+
+  .subcase{background:var(--panel-2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-top:14px}
+  .subcase .st{font-weight:700;font-size:15px;margin-bottom:8px;color:#fff}
+  .subcase .st span{color:var(--accent-2);font-family:'JetBrains Mono',monospace;font-size:12px;margin-right:8px}
+  .subcase p{font-size:14px;color:#c2cad8;margin-bottom:8px}
+  .subcase ul{list-style:none;display:flex;flex-direction:column;gap:7px;margin:10px 0}
+  .subcase li{position:relative;padding-left:18px;font-size:13.5px;color:#c2cad8}
+  .subcase li::before{content:"›";position:absolute;left:0;color:var(--accent);font-weight:700}
+
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .chip{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);background:var(--bg-2);border:1px solid var(--border-2);padding:5px 11px;border-radius:7px}
+
+  /* ---------- COMPACT / ADVISORY GRID ---------- */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .earlier{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+  .mini{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:22px;transition:border-color .2s,transform .2s}
+  .mini:hover{border-color:var(--border-2);transform:translateY(-2px)}
+  .mini h4{font-size:16px;font-weight:700;margin-bottom:4px}
+  .mini .role{font-size:12.5px;color:var(--accent);font-family:'JetBrains Mono',monospace;margin-bottom:10px}
+  .mini p{font-size:13.5px;color:#bcc4d2}
+
+  /* ---------- ABOUT ---------- */
+  .about p{font-size:16px;color:#cdd5e3;max-width:70ch;margin-bottom:16px}
+  .about p:last-child{margin-bottom:0}
+  .about .em{color:var(--accent)}
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .skillcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:22px}
+  .skillcard h4{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .skillcard .chips .chip{font-size:11px}
+
+  /* ---------- EDUCATION ---------- */
+  .edu{display:flex;flex-direction:column;gap:14px}
+  .edu .row{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap;font-size:14.5px;color:#cdd5e3;border-bottom:1px solid var(--border);padding-bottom:14px}
+  .edu .row b{color:#fff}
+  .edu .row .yr{color:var(--faint);font-family:'JetBrains Mono',monospace;font-size:12.5px;margin-left:auto}
+  .langs{margin-top:18px;font-size:14px;color:var(--muted)}
+  .langs b{color:var(--text)}
+
+  /* ---------- CONTACT ---------- */
+  .contact{text-align:center;padding:90px 0}
+  .contact h2{font-size:clamp(26px,4vw,40px);font-weight:900;letter-spacing:-.02em;margin-bottom:14px}
+  .contact h2 .grad{background:linear-gradient(100deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .contact p{color:var(--muted);max-width:48ch;margin:0 auto 30px;font-size:16px}
+  .contact .hero-actions{justify-content:center}
+  footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;color:var(--faint);font-size:13px}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:860px){
+    .stats{grid-template-columns:repeat(2,1fr);gap:22px 16px}
+    .grid2{grid-template-columns:1fr}
+    .earlier{grid-template-columns:1fr}
+    .skills-grid{grid-template-columns:1fr}
+    .nav-links{
+      display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;
+      background:var(--bg-2);border-bottom:1px solid var(--border);padding:8px 0;
+    }
+    .nav-links.open{display:flex}
+    .nav-links a{padding:14px 24px;width:100%}
+    .nav-links .nav-cta{margin:10px 24px;text-align:center}
+    .burger{display:block}
+    .case{padding:24px}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand">Anastasia Borisova<span class="dot">.</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact" class="nav-cta">Get in touch</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero" style="border-top:0">
+  <div class="wrap">
+    <span class="eyebrow mono">Product Leader · AI-first SaaS · 0→1 to scale</span>
+    <h1 class="hero-title">Strategy that shows up in <span class="grad">revenue.</span></h1>
+    <p class="hero-sub">Two-time founder and product leader. I turn early, ambiguous ideas into products that ship and grow — finding the market, validating the problem, and building the operating model. Lately I do it AI-first, building agents, evals, and automation pipelines myself.</p>
+    <div class="hero-actions">
+      <a href="#work" class="btn btn-primary">See selected work →</a>
+      <a href="mailto:anastasia.batareykina@gmail.com" class="btn btn-ghost">Email me</a>
+      <a href="https://www.linkedin.com/in/anastasiaborisovad/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">14<span>+</span></div><div class="lbl">years in product</div></div>
+      <div class="stat"><div class="num"><span>8-figure</span></div><div class="lbl">revenue built (SplitMetrics)</div></div>
+      <div class="stat"><div class="num">1,500<span>+</span></div><div class="lbl">clients acquired 0→1</div></div>
+      <div class="stat"><div class="num">20<span>+</span></div><div class="lbl">person teams led</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WORK ===================== -->
+<section id="work">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label mono">Selected work</div>
+      <h2 class="sec-title">Case studies</h2>
+      <p class="sec-intro">Eight projects across AI SaaS, AdTech/MarTech, mobile and advisory — every number is real. Ordered by relevance to AI and senior product roles.</p>
+    </div>
+
+    <!-- NEIROCHAT -->
+    <article class="case flagship reveal">
+      <div class="case-tag mono">Flagship · Founder & CPO</div>
+      <h3>Neirochat — an AI platform I built 0→1, and the agents that now run it</h3>
+      <p class="tagline">A B2C AI SaaS — LLM router + creative-AI platform for Russian-speaking SME owners.</p>
+      <div class="meta">
+        <span><b>Role:</b> Co-Founder &amp; Chief Product Officer</span>
+        <span><b>When:</b> 2026 – present</span>
+        <span><b>Stack:</b> Claude Code, Python, Yandex Direct/Metrica, Replicate, OpenRouter, SQL</span>
+      </div>
+      <div class="block">
+        <div class="h">The problem</div>
+        <p>Millions of Russian-speaking SME owners are locked out of the best AI tools by payment and access barriers. There's no card support, you need a VPN, and the tools are scattered across a dozen sites. These owners want the output — product cards, logos, promo visuals, copy — without having to turn technical to get it.</p>
+      </div>
+      <div class="block">
+        <div class="h">What I did</div>
+        <ul>
+          <li><b>Built the product 0→1 on a lean, AI-assisted stack</b> — owned vision, discovery, build, GTM, monetization and the KPI system. Idea to deployed feature in hours, using AI coding agents.</li>
+          <li><b>Ran 18 consecutive weekly build-measure-learn cycles</b> with full-funnel instrumentation: impressions → clicks → visits → registration → trial generation → paywall → purchase, with weekly ROAS, CPA, ARPPU and cohort read-outs.</li>
+          <li><b>Redesigned monetization on cohort data</b> — moved to pay-as-you-go packages + subscriptions, added a "subscribe &amp; save" model, and built a per-package unit-economics model (margins ~22% to ~90% by package, with currency and utilization risk flagged).</li>
+          <li><b>Built AI agents to run the recurring ops</b> so a two-person team covers the ground of a much bigger one.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <div class="h">Results (early-stage, real numbers)</div>
+        <ul>
+          <li>Registration conversion <span class="em">+15%</span> (15.1% → 17.4%) from a single H1/landing change.</li>
+          <li>Paywall-reach conversion lifted from <span class="em">22% → 85%</span> after redesigning paywall timing; a record <span class="em">18.9%</span> purchase-per-registration week followed.</li>
+          <li>Traffic scaled <span class="em">~1.5×</span> in a month (≈300 → ~5,000 weekly users); CTR roughly doubled (10–12% → 20–23%) through ad-creative iteration.</li>
+        </ul>
+      </div>
+
+      <div class="subcase">
+        <div class="st"><span class="mono">1a</span>Search-campaign management agent</div>
+        <p>A rules engine that watches the whole Yandex Direct account and flags exactly where money is leaking and where it's working — across keyword, ad group, campaign, search query and the account budget — grading each finding by severity with a concrete suggested action. Thresholds aren't guesses: the 263₽ max-CPA target is derived from real 60-day payer LTV (~1,128₽).</p>
+        <ul>
+          <li><b>Cuts the leaks:</b> keyword &gt;500₽/14 days with zero purchases → pause; a day burning &gt;1,500₽ with nothing → alert to check site/payment/paywall first.</li>
+          <li><b>Catches expensive-but-converting:</b> a campaign at 2× target CPA (≥526₽) with 3+ conversions → critical.</li>
+          <li><b>Harvests winners:</b> queries with 2+ purchases, CPA ≤263₽, 5+ clicks → new keyword candidates (auto-add vs review-first), deduped against existing keywords.</li>
+          <li><b>Watches pace:</b> &gt;80% of the 7,000₽ weekly budget gone before the week ends → flag.</li>
+        </ul>
+        <p>The weekly read used to mean pulling numbers from three places by hand. Now the agent does it, grades what it finds, and proposes the fix — I approve or override. Because the targets track real payer LTV, it optimizes toward profit, not vanity CTR.</p>
+      </div>
+
+      <div class="subcase">
+        <div class="st"><span class="mono">1b</span>SEO content pipeline — 10-phase publishing agent</div>
+        <p>An end-to-end agent that turns a topic + competitor URLs into a live, SEO + GEO/AEO-optimized article: competitor analysis → SEO query research → content brief → branded HTML with Article + FAQPage schema → an "answer-first" block engineered for LLM citation (ChatGPT, Alice, Perplexity) → 3 on-brand images via Replicate → re-hosted on Yandex storage → HTML patched → published via the admin API.</p>
+        <p>One person publishes search- and LLM-optimized articles at a pace that would normally take a small content team. It's human-in-the-loop by design — nothing goes live without my sign-off.</p>
+      </div>
+
+      <div class="chips">
+        <span class="chip">AI-first product</span><span class="chip">agentic ops</span><span class="chip">0→1 build</span><span class="chip">monetization design</span><span class="chip">growth experimentation</span><span class="chip">unit economics</span>
+      </div>
+    </article>
+
+    <!-- SPLITMETRICS -->
+    <article class="case reveal">
+      <div class="case-tag mono">B2B SaaS · Apple Search Ads</div>
+      <h3>SplitMetrics — freemium 0→1 to 8-figure revenue, plus an AI engine clients trust with real budgets</h3>
+      <p class="tagline">Official Apple Search Ads platform for mobile growth.</p>
+      <div class="meta">
+        <span><b>Role:</b> Product Manager → Lead PM</span>
+        <span><b>When:</b> 2022 – 2024</span>
+        <span><b>Scale:</b> 3 product teams, 20 people</span>
+      </div>
+      <div class="block">
+        <div class="h">The problem</div>
+        <p>Growth was constrained by a long, expensive enterprise sales cycle. A large SME segment wanted Apple Search Ads tooling but couldn't enter through enterprise sales — and the automation that existed wasn't trusted with live ad budgets.</p>
+      </div>
+      <div class="block">
+        <div class="h">What I did</div>
+        <ul>
+          <li><b>Owned the pivot to self-serve freemium</b> — defined the ICP and gating logic, re-architected onboarding to self-serve, launched a multi-channel GTM.</li>
+          <li><b>Took the AI-powered bid-optimization and rules engine from concept to market leadership</b> — defined the rule grammar, execution guarantees and failure-mode guardrails, and evolved it from rules to a model trained on live campaigns.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <div class="h">Results</div>
+        <ul>
+          <li><span class="em">0 → 1,500+</span> SME clients and <span class="em">8-figure revenue in 9 months</span>; market-leading position.</li>
+          <li><span class="em">+40% ARR</span> over 18 months, with these products a core driver.</li>
+          <li>Automation engine: <span class="em">15%</span> client budget savings and <span class="em">40%</span> less manual work — trusted enough that clients let it act on their spend.</li>
+        </ul>
+      </div>
+      <div class="chips">
+        <span class="chip">PLG / freemium</span><span class="chip">0→1</span><span class="chip">AI product</span><span class="chip">monetization</span><span class="chip">team leadership</span>
+      </div>
+    </article>
+
+    <!-- ELAMA -->
+    <article class="case reveal">
+      <div class="case-tag mono">AdTech · acquired by Yandex</div>
+      <h3>eLama — portfolio strategy that became an acquisition asset</h3>
+      <p class="tagline">Self-serve AdTech platform, 50k+ B2C/SME users.</p>
+      <div class="meta">
+        <span><b>Role:</b> Principal Product Manager</span>
+        <span><b>When:</b> 2020 – 2022</span>
+        <span><b>Domain:</b> AdTech, self-serve</span>
+      </div>
+      <div class="block">
+        <div class="h">The problem</div>
+        <p>A broad AdTech portfolio with diluted focus, and a growth engine that wasn't systematically scaling its wins.</p>
+      </div>
+      <div class="block">
+        <div class="h">What I did</div>
+        <ul>
+          <li><b>Ran problem discovery across the portfolio and sharpened the lineup</b> — cut ~40% of underperforming products, concentrated investment on strategic ones.</li>
+          <li><b>Owned the Yandex Direct automation-rules product</b> — researched failure modes, defined triggers, syntax and execution semantics for budget-sensitive campaigns.</li>
+          <li><b>Supervised the growth team's hypothesis cycles end to end</b> and built the discovery practice (interviews, JTBD, competitor tracking) feeding quarterly strategy.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <div class="h">Results</div>
+        <ul>
+          <li><span class="em">+10%</span> activation lift from scaled growth experiments.</li>
+          <li>The sharpened portfolio <b>became a strategic asset in the Yandex acquisition</b>, contributing directly to valuation.</li>
+        </ul>
+      </div>
+      <div class="chips">
+        <span class="chip">product strategy</span><span class="chip">portfolio prioritization</span><span class="chip">growth experimentation</span><span class="chip">discovery practice</span>
+      </div>
+    </article>
+
+    <!-- APP4BRAND -->
+    <article class="case reveal">
+      <div class="case-tag mono">Mobile SaaS · iOS &amp; Android</div>
+      <h3>App4Brand — mobile SaaS 0→1, five iOS &amp; Android apps shipped end to end</h3>
+      <p class="tagline">Brand–audience communication platform.</p>
+      <div class="meta">
+        <span><b>Role:</b> Head of Product</span>
+        <span><b>When:</b> 2014 – 2016</span>
+        <span><b>Team:</b> 12, full-stack</span>
+      </div>
+      <div class="block">
+        <div class="h">What I did</div>
+        <ul>
+          <li><b>Built the product 0→1 in 12 months</b> with a full-stack team of 12 — owning roadmap, analytics pipelines and release management.</li>
+          <li><b>Shipped 5 iOS and Android apps end to end</b> — HIG-compliant UX through full App Store / Play submission and review, iterating from store reviews and usage data.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <div class="h">Results</div>
+        <ul>
+          <li>All five apps shipped; <b>gained traction in a top tech accelerator and raised investment rounds.</b></li>
+        </ul>
+      </div>
+      <div class="chips">
+        <span class="chip">mobile / iOS</span><span class="chip">App Store</span><span class="chip">0→1</span><span class="chip">team leadership</span>
+      </div>
+    </article>
+
+    <!-- ADVISORY GRID -->
+    <div class="grid2">
+      <article class="case reveal" style="margin-bottom:0">
+        <div class="case-tag mono">Advisory</div>
+        <h3 style="font-size:21px">Product operating model + churn diagnostics</h3>
+        <p class="tagline">A US-market FinTech SaaS · 2025</p>
+        <div class="block">
+          <div class="h">What I did</div>
+          <ul>
+            <li><b>Ran a product-maturity assessment</b> — found People/Org strong (≈3.6–3.8/5), while Metrics, Process and Systems were the blockers (≈2.4–2.6/5).</li>
+            <li><b>Embedded a product operating model</b> — 4D cycle, dual-track discovery in Jira/Confluence, PRD templates, a GTM launch motion, and a 30/60/90 adoption-monitoring framework.</li>
+            <li><b>Delivered a 3-cohort churn analysis</b> with cancellation-reason clustering and lost-deal patterns — which became the company's churn-reduction plan.</li>
+          </ul>
+        </div>
+        <div class="chips">
+          <span class="chip">operating model</span><span class="chip">churn diagnostics</span><span class="chip">org maturity</span><span class="chip">mentoring</span>
+        </div>
+      </article>
+
+      <article class="case reveal" style="margin-bottom:0">
+        <div class="case-tag mono">Advisory · GTM</div>
+        <h3 style="font-size:21px">Discovery + market-entry strategy for an EdTech expansion</h3>
+        <p class="tagline">An established online English school entering Spain · 2025–2026</p>
+        <div class="block">
+          <div class="h">What I did</div>
+          <ul>
+            <li><b>Ran discovery + competitive landscape analysis</b> of the Spanish market — mapped players by offering, traffic and ad strategy, and found the white space (business English, mini-group format).</li>
+            <li><b>Built the GTM strategy</b> — ICP and pain/goal mapping, positioning, localized offering and pricing, a channel plan (LinkedIn / Google / YouTube with test budgets), and a "first 10 students" playbook.</li>
+            <li><b>Specified the localization + SEO/AEO foundation</b> for the Spanish site.</li>
+          </ul>
+        </div>
+        <div class="block">
+          <div class="h">Result</div>
+          <ul><li>A complete discovery + GTM strategy <b>now serving as the foundation the performance team is using to go live.</b></li></ul>
+        </div>
+        <div class="chips">
+          <span class="chip">discovery</span><span class="chip">GTM strategy</span><span class="chip">competitive analysis</span><span class="chip">market entry</span>
+        </div>
+      </article>
+    </div>
+
+    <!-- KITTY BREAK -->
+    <article class="case reveal" style="margin-top:24px">
+      <div class="case-tag mono">AI PM capstone</div>
+      <h3>Kitty Break — an end-to-end AI PRD with an eval-tested GPT-4 Vision pipeline</h3>
+      <p class="tagline">AI Product Management certification (Product Faculty) — concept + working pipeline, not a shipped app.</p>
+      <div class="block">
+        <div class="h">What it demonstrates</div>
+        <p>A full 4D-method AI product requirements document — market and user discovery, JTBD and journey mapping, AI-opportunity ranking, solution hypothesis, and a complete build/deploy plan.</p>
+      </div>
+      <div class="block">
+        <div class="h">What I built</div>
+        <ul>
+          <li><b>Designed the AI solution</b> — a content personalization + curation engine for time-boxed "cognitive break" video sets, with explicit pain-point → AI-opportunity mapping.</li>
+          <li><b>Engineered the prompt + eval system</b> — a master prompt with strict JSON-schema output, iterated across versions (temperature tuning cut token use ~50%), with typical/edge/negative test cases and pass/fail criteria.</li>
+          <li><b>Built a working pipeline</b> — an n8n + GPT-4 Vision flow that ingests video, samples frames, classifies emotional content, and returns schema-valid JSON (<span class="em">100%</span> schema-pass via a Python grader; documented the ~60% content-accuracy gap honestly with a remediation plan).</li>
+        </ul>
+      </div>
+      <div class="chips">
+        <span class="chip">AI PRD</span><span class="chip">eval-driven development</span><span class="chip">GPT-4 Vision</span><span class="chip">prompt engineering</span><span class="chip">4D method</span>
+      </div>
+    </article>
+
+    <!-- EARLIER -->
+    <div class="reveal" style="margin-top:8px">
+      <div class="sec-label mono" style="margin-top:24px">Earlier track record</div>
+    </div>
+    <div class="earlier reveal">
+      <div class="mini">
+        <h4>Legalight</h4>
+        <div class="role mono">Associate Product Director · 2018–2020</div>
+        <p>Led 0→1 development of a LegalTech analytics product from concept to MVP, design partners and first paying adoption; validated the market across two regions with ARPPU as the North Star.</p>
+      </div>
+      <div class="mini">
+        <h4>Interactive Lab</h4>
+        <div class="role mono">Co-Founder &amp; Managing Partner · 2010–2017</div>
+        <p>Founded and scaled an AR/VR &amp; multitouch studio to $2M+ annual revenue with full P&amp;L ownership; award-winning campaigns for Audi, BMW and Samsung ("Best Interactive Company," 2012 &amp; 2013).</p>
+      </div>
+      <div class="mini">
+        <h4>Russ Outdoor</h4>
+        <div class="role mono">Head of Project Office</div>
+        <p>Transformed a 120-person IT organization with Agile and governance frameworks — −28% delivery delays, −30% project timelines — the operational base for its shift to digital OOH.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about">
+  <div class="wrap about reveal">
+    <div class="sec-label mono">About</div>
+    <h2 class="sec-title">How I work</h2>
+    <p style="margin-top:18px">I'm a product leader with 14+ years scaling SaaS — tying AI to business strategy, 0→1 product development, revenue growth and global go-to-market for B2C/B2B, with a proven record in AdTech, MarTech and social. At SplitMetrics I launched the Apple Search Ads freemium tier that acquired 1,500+ clients and 8-figure revenue in nine months. At eLama I led the AdTech portfolio strategy into the Yandex acquisition. I built Interactive Lab from zero to $2M+ revenue with full P&amp;L ownership, and I co-founded Neirochat 0→1 — owning the full stack from discovery to build to GTM.</p>
+    <p>I define product vision, 4D roadmaps and scalable operating models, and I'm hands-on in AI — building agents, evals and automation pipelines daily — coaching product teams to think in outcomes, not output. My unusual entry point was M&amp;A and due diligence, which taught me to <span class="em">read the real value of a business before falling in love with it.</span> I'm a practicing product advisor and accelerator mentor, and an active voice in the international AI product management community.</p>
+  </div>
+</section>
+
+<!-- ===================== SKILLS ===================== -->
+<section id="skills">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label mono">Capabilities</div>
+      <h2 class="sec-title">Skills</h2>
+    </div>
+    <div class="skills-grid reveal">
+      <div class="skillcard">
+        <h4>Product leadership</h4>
+        <div class="chips">
+          <span class="chip">product strategy &amp; vision (4D)</span><span class="chip">0→1 to PMF</span><span class="chip">operating models</span><span class="chip">roadmapping</span><span class="chip">RICE</span><span class="chip">PRDs</span><span class="chip">OKRs / KPIs</span><span class="chip">product coaching</span>
+        </div>
+      </div>
+      <div class="skillcard">
+        <h4>Growth &amp; data</h4>
+        <div class="chips">
+          <span class="chip">PLG / freemium</span><span class="chip">activation</span><span class="chip">retention</span><span class="chip">churn diagnostics</span><span class="chip">cohort &amp; funnel analysis</span><span class="chip">monetization &amp; pricing</span><span class="chip">A/B testing</span><span class="chip">SQL</span><span class="chip">Amplitude</span><span class="chip">Mixpanel</span>
+        </div>
+      </div>
+      <div class="skillcard">
+        <h4>AI-first</h4>
+        <div class="chips">
+          <span class="chip">LLM routing</span><span class="chip">agent workflows</span><span class="chip">eval-driven development</span><span class="chip">prompt engineering</span><span class="chip">agentic coding (Claude Code)</span><span class="chip">human-in-the-loop pipelines</span>
+        </div>
+      </div>
+      <div class="skillcard">
+        <h4>Domains</h4>
+        <div class="chips">
+          <span class="chip">AI SaaS</span><span class="chip">AdTech / MarTech</span><span class="chip">Apple Search Ads</span><span class="chip">mobile / iOS</span><span class="chip">SME self-serve</span><span class="chip">EdTech</span><span class="chip">LegalTech</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:36px">
+      <div class="sec-label mono">Education &amp; certifications</div>
+      <div class="edu" style="margin-top:18px">
+        <div class="row"><b>Higher School of Economics, Moscow</b> — Master's, Civil Arbitration / Law <span class="yr">2006</span></div>
+        <div class="row"><b>Université PSL, Paris</b> — graduate diploma, French advocacy</div>
+        <div class="row"><b>Université de Tours</b> — French language summer school</div>
+        <div class="row"><b>Certifications:</b> AI Product Management (Product Faculty) · Data-Driven PM &amp; Product Growth (Go Practice) · Apple Search Ads (Apple) · SQL for Data Science</div>
+      </div>
+      <p class="langs"><b>Languages:</b> Russian (native) · English (fluent) · French (professional) · Portuguese (professional working) · Spanish (intermediate)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" style="border-top:1px solid var(--border)">
+  <div class="wrap contact reveal">
+    <h2>Let's build something that <span class="grad">shows up in revenue.</span></h2>
+    <p>Open to Head of Product / Lead PM roles in scale-up and growth-stage companies, and selective product advisory.</p>
+    <div class="hero-actions">
+      <a href="mailto:anastasia.batareykina@gmail.com" class="btn btn-primary">anastasia.batareykina@gmail.com</a>
+      <a href="https://www.linkedin.com/in/anastasiaborisovad/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+      <a href="https://substack.com/@stacyproduct" target="_blank" rel="noopener" class="btn btn-ghost">Substack</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Anastasia Borisova · Madrid, Spain · Product Leader, AI-first SaaS</div>
+</footer>
+
+<script>
+  // Mobile nav
+  var burger=document.getElementById('burger'), links=document.getElementById('navLinks');
+  burger.addEventListener('click',function(){links.classList.toggle('open')});
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')links.classList.remove('open')});
+
+  // Reveal on scroll
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target);}});
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+</script>
+</body>
+</html>
